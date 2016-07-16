@@ -1,8 +1,18 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 addons:
-  postgresql: "9.4"
+  postgresql: '9.4'
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: XFbTWwm3EPY1InsCmIBLXMdmIg6JmYrbkf3RRjJJkFTFPB+pv/NcZcmhfKOhmu1n1poVBCzTnJU5ZtPSvkZYqbVrfnZkVbw+isUDVzJlu7z53jePmcReU5NFngf/yen+8bKvxcbDrVqzp//ce9VCrv487G+8FwMQezN5lI3Lza0hRFOriZqDiz96Shq6hQQfQjmcqGA5EyxMt8/kjdsG/eGumdRO30adcvt1+TFbEc49TiWfA/WtaFCfCmvBkg+VxtWZ1jjsmES2msERL+14RcUxVT3RvQEjarg4z7Z3ANhgyd6YH08LUqF0WWDo/dFapR8YfM0Te2D99rmw14dPhuBAjnpXbkg83lA2nHvRUDeAelFi29wBHrq6cXb1jrR83wj2TufPbtzbzUI+2aCiDOIMvlJLkHlxN4+AE8Ov53ArEjIeKbDQeV0Ma78m9Iz/eEnoJrJ7ktBSz/RY6+EU7UY+LXoOGSO7FHF3LW0WtsrVSCq3N3O6oO+HA8tJhoGK6tmNHH2MGthJSL8oVuSA5dL9rSdOBHz5w8bpNXz03fe5kTzhzAJ7iC5pAi7oRYOdxEk3Uk7yykGh3FLKVvyTuvYwOHD7eyuN9qHLnp36kJVgxIj68+Xr//Kj2t60HTPFmU60idsdBiYNPHxkcyFBDGuyTL4NvwnkQmMYf+7fhXI=
+  app: wanderlust-days
+  on:
+    repo: sdossettswift/travelogue
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
