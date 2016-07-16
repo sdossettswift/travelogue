@@ -1,6 +1,9 @@
 @import "materialize/components/color";
 // $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
+@import 'leaflet';
+@import 'dashboard';
+@import 'user';
 .wanderlust_icons{
   text-align: center;
 }

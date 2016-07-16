@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require leaflet
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
