@@ -15,4 +15,3 @@ deploy:
     repo: sdossettswift/travelogue
   run:
     - "rake db:migrate"
-    - "rake cleanup"
