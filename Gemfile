@@ -17,6 +17,9 @@ gem 'leaflet-rails'
 gem 'http'
 gem 'materialize-sass'
 gem "minitest-rails"
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
+gem 'refile-postgres'
 
 group :test do
   gem "minitest-rails-capybara"
