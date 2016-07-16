@@ -16,6 +16,12 @@ gem 'rails_12factor'
 gem 'leaflet-rails'
 gem 'http'
 gem 'materialize-sass'
+gem "minitest-rails"
+
+group :test do
+  gem "minitest-rails-capybara"
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
