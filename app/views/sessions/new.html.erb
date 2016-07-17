@@ -6,7 +6,7 @@
 
 <div class="container">
 
-<%= form_tag do %>
+<%= form_for do %>
   <div class="form-group">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email], class: "form-control" %>
