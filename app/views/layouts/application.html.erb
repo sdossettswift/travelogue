@@ -17,6 +17,11 @@
          <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
          <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
          <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+         <% if @current_user %>
+              <li><%= link_to 'Sign Out', sign_in_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Sign In', sign_in_path %> </li>
+         <% end %>
        </ul>
      </div>
    </nav>
